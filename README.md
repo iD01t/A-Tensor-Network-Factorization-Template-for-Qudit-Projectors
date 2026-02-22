@@ -1,57 +1,132 @@
-# A Tensor-Network Factorization Template for Qudit Projectors with Conjectured Complexity Scaling
+# Tensor-Network Factorization Template for Qudit Projectors
 
-This repository formalizes the **Local Character Projection Identity (LCPI)** as a structural template for qudit systems. It introduces representation-complexity metrics for **Matrix Product Operator (MPO)** realizations, distinguishing between raw parameter counts and gauge-reduced dimensions.
+**Author:** Guillaume Lessard  
+**Affiliation:** Independent Researcher, Longueuil, Québec, Canada  
+**Organization:** iD01t Productions  
+**Date:** February 21, 2026  
 
-## Technical Summary
+---
 
-The LCPI relation decomposes an orthogonal projector  into a local character sum:
+## Overview
 
+This repository formalizes the **Local Character Projection Identity (LCPI)** as a tensor-network structural template for qudit projector operators.
 
-where .
+The goal is to:
 
-### Key Identities and Conjectures
+- Provide a constructive decomposition of orthogonal projectors
+- Define representation-complexity metrics for Matrix Product Operator (MPO) realizations
+- Investigate conjectured fractal scaling behavior in gauge-reduced tensor representations
 
-* 
-**Operator Validity**: For any normalized  and orthonormal basis , the LCPI satisfies .
+This work connects operator theory, tensor networks, and complexity scaling.
 
+---
 
-* 
-**Complexity Scaling**: If triadic branching in the LCPI expansion survives gauge reduction, complexity scales with a fractal dimension .
+## Core Identity
 
+The LCPI decomposition expresses an orthogonal projector Π as:
 
-* 
-**Qubit Scaling**: For , the fractal dimension .
+Π = ∑ᵢ Aᵢ Aᵢ†
 
+where:
 
-* 
-**Falsification**: The conjecture is falsifiable through numerical MPO compression; if branching is absorbed by gauge freedom, the scaling law fails.
+Aᵢ = Π |eᵢ⟩⟨ψ₀|
 
+This construction satisfies projector validity:
 
+Π² = Π
 
-## Roadmap for Proof
+---
 
-Transitioning from conjecture to theorem requires deriving:
+## Conjecture: Fractal Complexity Scaling
 
-1. 
-**Upper Bound**: .
+We hypothesize that LCPI tensor networks exhibit scaling:
 
+Cgauge ∼ χᴰᶠ
 
-2. 
-**Lower Bound**: A proof that the LCPI Jacobian rank is at least .
+where:
 
+Df = log_d(3)
 
-3. 
-**Gauge Invariance**: Verification that the triadic structure is not an artifact of the  choice.
+Example:
 
+- qubit system (d = 2)
+- Df ≈ 1.585
+
+This implies fractal-like parameter growth beyond conventional manifold scaling.
+
+---
+
+## Falsifiability
+
+The conjecture is testable.
+
+It fails if:
+
+- MPO compression absorbs triadic branching into gauge freedom
+- No independent parameter growth remains
+
+This makes the proposal scientifically meaningful and refutable.
+
+---
+
+## Repository Contents
 
 
 ---
 
-**Author:** Guillaume Lessard 
+## Roadmap
 
-**Affiliation:** Independent Researcher, ID01t Productions, Longueuil, Québec, Canada 
+Future work includes:
 
-**Date:** February 21, 2026 
+- Numerical MPO implementations
+- Jacobian rank analysis
+- Gauge-invariance verification
+- Formal proof or falsification of scaling law
 
-**Status:** All Rights Reserved.
+---
 
+## Scientific Context
+
+This project builds on tensor-network theory including:
+
+- Matrix Product Operators (MPO)
+- Density Matrix Renormalization Group (DMRG)
+- Gauge freedom in tensor decompositions
+
+---
+
+## Status
+
+Current stage: **Mathematical formulation and conjecture**
+
+Next stage: **Numerical validation**
+
+---
+
+## Citation
+
+If you use this work, please cite:
+
+Lessard, Guillaume  
+Tensor-Network Factorization Template for Qudit Projectors  
+2026
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Contact
+
+Guillaume Lessard  
+Longueuil, Québec, Canada  
+iD01t Productions
+
+---
+
+## Philosophy
+
+A conjecture earns its truth only by surviving attack.
